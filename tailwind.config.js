@@ -12,10 +12,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'golos-text': ['Golos Text', ...defaultTheme.fontFamily.sans]
+            },
+            colors: {
+                'basic': '#7367f0',
+                'basic-hover': '#685dd8',
             },
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, require('daisyui')],
 };

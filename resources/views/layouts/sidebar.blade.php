@@ -14,13 +14,13 @@
     <li class="mb-2">
         <a href="#" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
             <span class="w-5 text-center mr-3"><i class="fa-regular fa-house-blank"></i></span> 
-            Главная
+            {{ __('Главная') }}
         </a>
     </li>
     <li class="mb-2">
-        <a href="#" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+        <a href="{{ route('card.index') }}" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
             <span class="w-5 text-center mr-3"><i class="fa-regular fa-clipboard-list"></i></span> 
-            Карточки
+            {{ __('Карточки') }}
         </a>
     </li>
 </ul>

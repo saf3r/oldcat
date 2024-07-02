@@ -18,3 +18,23 @@ jQuery(function($){
 		}
 	});
 });
+
+$("#header_profile_button").on("click", function(e) {
+    e.preventDefault();
+    
+    if($(this).hasClass("hidden")) {
+        $("#header_profile_list").addClass("hidden");
+    } else {
+        $("#header_profile_list").removeClass("hidden");
+    }
+});
+
+jQuery(function($){
+	$(document).mouseup( function(e){
+		var div = $( "#header_profile_list" );
+		if ( !div.is(e.target)
+		    && div.has(e.target).length === 0 ) {
+            div.addClass("hidden");
+		}
+	});
+});

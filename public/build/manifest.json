@@ -1,22 +1,78 @@
 {
+  "fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-BQ9ONI_w.ttf",
+    "src": "fa-brands-400.ttf"
+  },
+  "fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-rBZOKPDu.woff2",
+    "src": "fa-brands-400.woff2"
+  },
+  "fa-duotone-900.ttf": {
+    "file": "assets/fa-duotone-900-DaQ3Wdqc.ttf",
+    "src": "fa-duotone-900.ttf"
+  },
+  "fa-duotone-900.woff2": {
+    "file": "assets/fa-duotone-900-Doicluvn.woff2",
+    "src": "fa-duotone-900.woff2"
+  },
+  "fa-light-300.ttf": {
+    "file": "assets/fa-light-300-CSCtqA2F.ttf",
+    "src": "fa-light-300.ttf"
+  },
+  "fa-light-300.woff2": {
+    "file": "assets/fa-light-300-QQku_Dn_.woff2",
+    "src": "fa-light-300.woff2"
+  },
+  "fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-CdrxwLdO.ttf",
+    "src": "fa-regular-400.ttf"
+  },
+  "fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-CXjIVIxJ.woff2",
+    "src": "fa-regular-400.woff2"
+  },
+  "fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-6GqHuKIl.ttf",
+    "src": "fa-solid-900.ttf"
+  },
+  "fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-BKjIQabP.woff2",
+    "src": "fa-solid-900.woff2"
+  },
+  "fa-thin-100.ttf": {
+    "file": "assets/fa-thin-100-C_GxBiYG.ttf",
+    "src": "fa-thin-100.ttf"
+  },
+  "fa-thin-100.woff2": {
+    "file": "assets/fa-thin-100-DuD1aAk0.woff2",
+    "src": "fa-thin-100.woff2"
+  },
+  "fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-Cx2f8McC.ttf",
+    "src": "fa-v4compatibility.ttf"
+  },
+  "fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-CusH8KpY.woff2",
+    "src": "fa-v4compatibility.woff2"
+  },
   "resources/css/all.min.css": {
     "file": "assets/all-B0CQZ08o.css",
     "src": "resources/css/all.min.css",
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-vSdYhvbT.css",
+    "file": "assets/app-BhtnD7Zt.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-Cs0QkU1O.js",
+    "file": "assets/app-Dun-AsJT.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/js/main.js": {
-    "file": "assets/main-CIKSTWHG.js",
+    "file": "assets/main-CO3Tzuiq.js",
     "name": "main",
     "src": "resources/js/main.js",
     "isEntry": true

@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'golos-text': ['Golos Text', ...defaultTheme.fontFamily.sans]
+                'golos-text': ['Noto Sans', ...defaultTheme.fontFamily.sans]
             },
             colors: {
                 'basic': '#7367f0',
@@ -21,5 +21,14 @@ export default {
         },
     },
 
-    plugins: [forms, require('daisyui')],
+    plugins: [forms, require('daisyui'), require('flowbite/plugin')],
+
+    aisyui: {
+        themes: ['light'],
+        base: true, // applies background color and foreground color for root element by default
+        styled: true, // include daisyUI colors and design decisions for all components
+        utils: true, // adds responsive and modifier utility classes
+        prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+        logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+      },
 };

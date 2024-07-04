@@ -43,17 +43,17 @@
     <div class="relative bg-white w-[calc(100%-3.25rem)] mx-auto shadow-md rounded-md">
         <div class="flex justify-between items-center p-6">
             <div class="flex justify-center items-center space-x-3">
-                <p>Показать</p>
+                <p>{{ __('Показать') }}</p>
                 <select id="card_row" class="block w-[70px] p-2 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-[#7367f0] focus:border-[#7367f0]">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="50">50</option>
+                    <option value="10">{{ __(10) }}</option>
+                    <option value="20">{{ __(20) }}</option>
+                    <option value="30">{{ __(30) }}</option>
+                    <option value="50">{{ __(50) }}</option>
                 </select>
-                <x-buttons.basic-link href="{{ route('card.index') }}">
+                <x-buttons.basic id="sidebar_button">
                     <i class="fa-regular fa-plus mr-2"></i>
-                    Создать карточку
-                </x-buttons.basic-link >
+                    {{ __('Создать карточку') }}
+                </x-buttons.basic >
             </div>
             <div class="flex items-center space-x-3">
                 <div>
@@ -72,14 +72,14 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="uppercase text-left border-b border-gray-200">
-                        <th class="font-medium py-[18.5px] px-3">Номер карточки</th>
-                        <th class="font-medium py-[18.5px] px-3">Кличка и пол</th>
-                        <th class="font-medium py-[18.5px] px-3 text-center">Окрас</th>
-                        <th class="font-medium py-[18.5px] px-3">Пол</th>
-                        <th class="font-medium py-[18.5px] px-3">Порода</th>
-                        <th class="font-medium py-[18.5px] px-3 text-center">Вакцинация</th>
-                        <th class="font-medium py-[18.5px] px-3">Дата создания</th>
-                        <th class="font-medium py-[18.5px] px-3 text-center">Статус</th>
+                        <th class="font-medium py-[18.5px] px-3">{{ __('Номер карточки') }}</th>
+                        <th class="font-medium py-[18.5px] px-3">{{ __('Кличка и пол') }}</th>
+                        <th class="font-medium py-[18.5px] px-3 text-center">{{ __('Окрас') }}</th>
+                        <th class="font-medium py-[18.5px] px-3">{{ __('Пол') }}</th>
+                        <th class="font-medium py-[18.5px] px-3">{{ __('Порода') }}</th>
+                        <th class="font-medium py-[18.5px] px-3 text-center">{{ __('Вакцинация') }}</th>
+                        <th class="font-medium py-[18.5px] px-3">{{ __('Дата создания') }}</th>
+                        <th class="font-medium py-[18.5px] px-3 text-center">{{ __('Статус') }}</th>
                         <th class="font-medium py-[18.5px] px-3"></th>
                     </tr>
                 </thead>
@@ -131,13 +131,13 @@
                                         </x-buttons.small>
                                         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                             <li>
-                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-trash-can-xmark mr-1 w-4 text-center"></i> Удалить</a>
+                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-trash-can-xmark mr-1 w-4 text-center"></i> {{ __('Удалить') }}</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-star mr-1 w-4 text-center"></i> В избранное</a>
+                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-star mr-1 w-4 text-center"></i> {{ __('В избранное') }}</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-paste mr-1 w-4 text-center"></i> Дублировать</a>
+                                                <a href="#" class="active:!bg-[#e9e7fd] active:!text-[#7367f0] focus:!bg-[#e9e7fd] focus:!text-[#7367f0]"><i class="fa-light fa-paste mr-1 w-4 text-center"></i> {{ __('Дублировать') }}</a>
                                             </li>
                                         </ul>
                                       </div>
@@ -152,5 +152,33 @@
             {{ $cards->links() }}
         </div>
     </div>
-    <span class="bg-[#fff0e1] bg-[#ebebed] bg-[#ffe2e3] bg-[#ddf6e8] text-[#ff9f43] text-[#808390] text-[#ff4c51] text-[#28c76f] hidden"></span>
+    <div id="overlay" class="hidden fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-[#97959e] opacity-60 !m-0 z-40"></div>
+    <div id="sidebar" class="fixed top-0 right-0 bg-white h-full w-[384px] !m-0 z-50 translate-x-96 transition-all">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+            <h1 class="text-lg font-semibold text-gray-700">Создание карточки</h1>
+            <i id="sidebar_close" class="fa-regular fa-xmark text-2xl text-gray-500 cursor-pointer"></i>
+        </div>
+        <div class="p-6">
+            <form action="" class="space-y-6">
+                <div>
+                    <label for="card_number" class="block mb-1 text-[13px] font-medium text-gray-600">Номер карточки</label>
+                    <input type="text" id="card_number" class="block w-full p-2 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-[#7367f0] focus:border-[#7367f0] transition-all" placeholder="1Ж-701" required />
+                </div>
+                <div>
+                    <label for="first_name" class="block mb-1 text-[13px] font-medium text-gray-600">Тестовое поле</label>
+                    <input type="text" id="first_name" class="block w-full p-2 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-[#7367f0] focus:border-[#7367f0] transition-all" placeholder="1Ж-701" required />
+                </div>
+                <div>
+                    <label for="card_status2" class="block mb-1 text-[13px] font-medium text-gray-600">Статус карточки</label>
+                    <select id="card_status2" class="block w-full p-2 border border-gray-300 text-gray-600 text-sm rounded-md focus:ring-[#7367f0] focus:border-[#7367f0]">
+                        @foreach ($status as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <span class="bg-[#fff0e1] bg-[#ebebed] bg-[#ffe2e3] bg-[#ddf6e8] text-[#ff9f43] text-[#808390] text-[#ff4c51] text-[#28c76f] hidden !translate-x-0"></span>
 </x-app-layout>

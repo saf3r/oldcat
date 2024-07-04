@@ -38,3 +38,16 @@ jQuery(function($){
 		}
 	});
 });
+
+$("#sidebar_button").on("click", function(e) {
+    $("#sidebar").addClass("!translate-x-0")
+    // $("#sidebar").removeClass("translate-x-96");
+    $("#overlay").removeClass("hidden")
+});
+
+$("#overlay, #sidebar_close").on("click", function(e) {
+    $("#overlay").addClass("hidden")
+    $("#sidebar").addClass("translate-x-96")
+    $("#sidebar").removeClass("!translate-x-0");
+    
+});

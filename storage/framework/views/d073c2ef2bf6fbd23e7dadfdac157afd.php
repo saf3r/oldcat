@@ -65,7 +65,7 @@
                                         <i class="fa-solid fa-circle-small absolute bottom-[-3px] right-[5px] text-[14px] text-green-500 z-[1]"></i>
                                         <i class="fa-solid fa-circle-small absolute bottom-[-5px] right-[4px] text-[18px] text-white"></i>
                                     </div>
-                                    <ul id="header_profile_list" class="hidden absolute right-[-5px] top-[4rem] w-max bg-white text-gray-800 rounded-md z-[1] py-2 shadow-md">
+                                    <ul id="header_profile_list" class="hidden absolute right-[-5px] top-[4rem] w-max bg-white text-gray-800 rounded-md z-[1] py-2 shadow-md border border-[#eee]">
                                         <li class="mb-2 flex items-center space-x-3 py-2 px-3 mx-3 rounded-md transition-all">
                                             <div class="relative">
                                                 <img src="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png" class="rounded-full w-10 h-10" alt="">

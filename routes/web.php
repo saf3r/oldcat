@@ -11,6 +11,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/card', [CardController::class, 'index'])->name('card.index');
+    Route::get('/card/add', [CardController::class, 'edit'])->name('card.add');
 });
 
 // Route::get('/dashboard', function () {

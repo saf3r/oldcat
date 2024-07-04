@@ -29,4 +29,15 @@ class CardController extends Controller
 
         return view('card.index', compact('cards', 'card', 'cat', 'quarantine', 'archive', 'status'));
     }
+
+    public function edit(Request $request)
+    {
+        $card = array();
+        
+        if($request->id) {
+            $card = Card::find($request->id)->first();
+        }
+
+        return view('card.edit', compact('card'));
+    }
 }

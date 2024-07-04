@@ -12,7 +12,7 @@
 </div>
 <ul class="">
     <li class="mb-2">
-        <a href="#" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+        <a href="/" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
             <span class="w-5 text-center mr-3"><i class="fa-regular fa-house-blank"></i></span> 
             <?php echo e(__('Главная')); ?>
 

@@ -1,27 +1,92 @@
 <div class="flex justify-between items-center mb-3">
     <a href="/" class="py-3 my-2 mx-auto">
-        <img src="/img/logo.png" class="w-40" alt="Логотип 'Старый Кот'">
+        <img src="/img/logo-short.png" class="w-40 px-[1.15rem] group-[.open]:hidden" alt="Логотип 'Старый Кот'">
+        <img src="/img/logo.png" class="w-40 group-[.close]:hidden" alt="Логотип 'Старый Кот'">
     </a>
-    
-    <label class="swap swap-rotate mr-5">
-        <!-- this hidden checkbox controls the state -->
-        <input type="checkbox" class="hidden" />
-        <i class="fa-regular fa-circle swap-on fill-current"></i>
-        <i class="fa-regular fa-circle-dot swap-off fill-current"></i>
-    </label>
 </div>
-<ul class="">
-    <li class="mb-2">
-        <a href="#" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
-            <span class="w-5 text-center mr-3"><i class="fa-regular fa-house-blank"></i></span> 
-            Главная
-        </a>
-    </li>
-    <li class="mb-2">
-        <a href="#" class="flex items-center space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
-            <span class="w-5 text-center mr-3"><i class="fa-regular fa-clipboard-list"></i></span> 
-            Карточки
-        </a>
-    </li>
+<ul class="flex justify-between flex-col h-[calc(100vh-88px)] space-y-2">
+    <div class="space-y-2">
+        <li>
+            <a href="/" class="<?php echo e((request()->is('/')) ? 'bg-[linear-gradient(270deg,rgba(115,103,240,0.7)_0%,_#7367f0_100%)] text-white' : ''); ?> group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-house-blank"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Главная')); ?></span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo e(route('pet.index')); ?>" class="<?php echo e((request()->is('pets*')) ? 'bg-[linear-gradient(270deg,rgba(115,103,240,0.7)_0%,_#7367f0_100%)] text-white' : ''); ?> group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-paw-simple"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Питомцы')); ?></span>
+            </a>
+        </li>
+        <li>
+            <p class="py-2 px-3 mx-3 text-[#acaab1] text-sm uppercase">
+                <span class="group-[.close]:hidden"><?php echo e(__('Администрирование')); ?></span>
+            </p>
+        </li>
+        <li>
+            <a href="#" class="group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-users"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Пользователи')); ?></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-files"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Справочники')); ?></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-list-tree"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Логи')); ?></span>
+            </a>
+        </li>
+        <li>
+            <p class="py-2 px-3 mx-3 text-[#acaab1] text-sm uppercase">
+                <span class="group-[.close]:hidden"><?php echo e(__('Личная информация')); ?></span>
+            </p>
+        </li>
+        <li>
+            <a href="#" class="flex items-center group-[.close]:w-max group-[.close]:p-[.68rem] space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-user"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Профиль')); ?></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="flex items-center group-[.close]:w-max group-[.close]:p-[.68rem] space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-gear"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Настройки')); ?></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="flex items-center group-[.close]:w-max group-[.close]:p-[.68rem] space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3"><i class="fa-regular fa-arrow-right-from-bracket"></i></span> 
+                <span class="group-[.close]:hidden"><?php echo e(__('Выход')); ?></span>
+            </a>
+        </li>
+    </div>
+    <div class="space-y-2">
+        <li>
+            <a href="#" id="sidebar_status" class="group-[.open]:flex group-[.open]:items-center group-[.close]:block group-[.close]:text-center group-[.close]:w-[70%] group-[.close]:mx-auto space-x-3 py-2 px-3 mx-3 hover:bg-[rgba(225,222,245,.06)] rounded-md transition-all">
+                <span class="group-[.open]:w-5 text-center group-[.open]:mr-3">
+                    <i class="fa-regular group-[.close]:hidden fa-xmark"></i>
+                    <i class="fa-regular group-[.open]:hidden fa-bars"></i>
+                </span>
+                <span class="group-[.close]:hidden"><?php echo e(__('Скрыть меню')); ?></span>
+            </a>
+        </li>
+    </div>
 </ul>
-<?php /**PATH C:\xampp\htdocs\oldcat\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
+
+<script>
+    $("#sidebar_status").on("click", function(e) {
+        var _token = $("input[name='_token']").val();
+
+        $.ajax({
+            url : "/sidebar",
+            data: { _token:_token },
+            type : 'POST',
+            dataType : 'json'
+        });
+    });
+</script><?php /**PATH C:\xampp\htdocs\oldcat\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

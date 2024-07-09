@@ -1,20 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                    <x-buttons.basic>
-                        <i class="fa-solid fa-user mr-3"></i> Создать карточку
-                    </x-buttons.basic>
-                </div>
-            </div>
-        </div>
+    <div class="breadcrumbs px-7 text-sm">
+        <ul>
+            <li><span class="inline-flex items-center gap-2 text-gray-500"><i class="fa-solid fa-house-blank mr-1"></i> Главная</span></li>
+        </ul>
     </div>
 </x-app-layout>

@@ -18,3 +18,45 @@ jQuery(function($){
 		}
 	});
 });
+
+$("#header_profile_button").on("click", function(e) {
+    e.preventDefault();
+    
+    if($(this).hasClass("hidden")) {
+        $("#header_profile_list").addClass("hidden");
+    } else {
+        $("#header_profile_list").removeClass("hidden");
+    }
+});
+
+jQuery(function($){
+	$(document).mouseup( function(e){
+		var div = $( "#header_profile_list" );
+		if ( !div.is(e.target)
+		    && div.has(e.target).length === 0 ) {
+            div.addClass("hidden");
+		}
+	});
+});
+
+$("#sidebar_button").on("click", function(e) {
+    $("#sidebar").addClass("!translate-x-0")
+    $("#overlay").removeClass("hidden")
+});
+
+$("#overlay, #sidebar_close").on("click", function(e) {
+    $("#overlay").addClass("hidden")
+    $("#sidebar").addClass("translate-x-96")
+    $("#sidebar").removeClass("!translate-x-0");
+});
+
+$("#sidebar_status").on("click", function() {
+    if($("#_sidebar").hasClass("open")) {
+        $("#_sidebar").removeClass("min-w-64 open")
+        $("#_sidebar").addClass("w-16 close")
+    } else {
+        $("#_sidebar").addClass("min-w-64 open")
+        $("#_sidebar").removeClass("w-16 close")
+    }
+    
+});
